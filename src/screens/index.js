@@ -21,70 +21,104 @@ function Index({navigation}) {
         {
         title: 'Morning Textbook',
         description: '8.6',
-        image:"./../assets/courses/illustrate.png"
+        image: require("./../assets/courses/illustrate.png")
       },
       {
         title: 'English Language',
         description:'7.5',
-        image: "./../assets/courses/english.png"
+        image: require("./../assets/courses/english.png")
       },
       {
         title: 'Illustration',
         description: '7.0',
-        image:"./../assets/courses/illustrate.png"
+        image: require("./../assets/courses/illustrate.png")
       },
       {
         title: 'Quantitative reasoning',
         description:'9.0',
-        image:"./../assets/courses/maths.png"
+        image: require("./../assets/courses/maths.png")
       },
     ];
     const renderItem = ({item}) => (
         <TouchableOpacity>
         <View style={styles.snapCarouselItem}>
             <Image source={item.image} style={styles.imgslider}/>
-            <Text style={{fontSize:30,fontWeight:"bold"}}>{item.title}</Text>
-            <Text style={{fontSize:25,fontWeight:"bold"}}>{item.description}</Text>
+            <Text style={{fontSize:15,fontWeight:"bold"}}>{item.title}</Text>
+            <Text style={{fontSize:10,fontWeight:"bold"}}>{item.description}</Text>
+        </View>
+        </TouchableOpacity>
+      );
+
+      const carouselData2 = [  
+        {
+        title: 'Unilag',
+        description: '8.6',
+        image: require("./../assets/courses/illustrate.png")
+      },
+      {
+        title: 'OAU',
+        description:'7.5',
+        image: require("./../assets/courses/english.png")
+      },
+      {
+        title: 'UI',
+        description: '7.0',
+        image: require("./../assets/courses/illustrate.png")
+      },
+      {
+        title: 'UNIPORT',
+        description:'9.0',
+        image:require("./../assets/courses/maths.png")
+      },
+    ];
+    const renderItem2 = ({item}) => (
+        <TouchableOpacity>
+        <View style={styles.snapCarouselItem}>
+            <Image source={item.image} style={styles.imgslider}/>
+            <Text style={{fontSize:15,fontWeight:"bold"}}>{item.title}</Text>
+            <Text style={{fontSize:10,fontWeight:"bold"}}>{item.description}</Text>
         </View>
         </TouchableOpacity>
       );
     return (
-        <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor:"#fff"}}>
             <ScrollView>
                 {/* header */}
-                <View><Text></Text></View>
+                <View><Text style={{fontSize:30,fontWeight:"bold",fontFamily:"Roboto",marginLeft:25}}>Home Page</Text></View>
 
                 {/* middle1 */}
-                <View>
-                    <TextInput placeholder="search"/>
+                <View style={{flex:1, marginBottom:40}}>
+                    <TextInput style={{width:"90%",elevation:20,backgroundColor:"#fff", margin:20}} placeholder="search for any course or school"/>
                     
                     <ScrollView>
-                        <TouchableOpacity style={styles.snapCarouselItem}> 
+                        <View style={{justifyContent:"space-evenly",flexDirection:"row",marginBottom:40}}>
+                        <TouchableOpacity > 
                                 <Image source={require("./../assets/images/diagram.png")} style={styles.imgslider}/>
                                 <Text>Category</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.snapCarouselItem}> 
+                        <TouchableOpacity > 
                                 <Image source={require("./../assets/images/online-education.png")} style={styles.imgslider}/>
                                 <Text>Courses</Text>
                         </TouchableOpacity>
-                    </ScrollView>
-                    <ScrollView>
-                        <TouchableOpacity style={styles.snapCarouselItem}> 
+                        </View>
+                        <View style={{justifyContent:"space-evenly",flexDirection:"row"}}>
+                        <TouchableOpacity > 
                                 <Image source={require("./../assets/images/school.png")} style={styles.imgslider}/>
                                 <Text>Schools</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.snapCarouselItem}> 
-                                <Image source={require("./../assets/images/classes.png")} style={styles.imgslider}/>
+                        <TouchableOpacity > 
+                                <Image source={require("./../assets/images/online-education2.png")} style={styles.imgslider}/>
                                 <Text>Free Classes</Text>
                         </TouchableOpacity>
+                        </View>
                     </ScrollView>
                 </View>
 
                 {/* middle2 */}
-                <View>
-                    <Text>Recommended Courses</Text>
+                <View style={{flex:1, marginBottom:40,marginLeft:25}}>
+                    <Text style={{fontSize:20,fontWeight:"bold",fontFamily:"Roboto",marginBottom:10}}>Recommended Courses</Text>
                     <TouchableOpacity>
                         <Animated.View>
                             <View>
@@ -101,14 +135,14 @@ function Index({navigation}) {
 
 
                 {/* middle3 */}
-                <View>
-                    <Text>Recommended Schools</Text>
+                <View style={{flex:1, marginBottom:60, marginLeft:25}}>
+                    <Text style={{fontSize:20,fontWeight:"bold",fontFamily:"Roboto"}}>Schools</Text>
                     <TouchableOpacity>
                         <Animated.View>
                             <View>
                             <Carousel
-                                data={carouselData}
-                                renderItem={renderItem}
+                                data={carouselData2}
+                                renderItem={renderItem2}
                                 // sliderWidth={width}
                                 // itemWidth={width-56}
                             />
@@ -118,13 +152,13 @@ function Index({navigation}) {
                 </View>
             </ScrollView>
             {/* TAB */}
-            {/* <View style={styles.tabs} elevation={20}>
+            <View style={styles.tabs} elevation={20}>
                 <View><TouchableOpacity onPress={() => navigation.navigate('Index')}><Image resizeMode="contain" style={styles.icon} source={require('./../assets/tabs/homeIcon.png')}/></TouchableOpacity></View>
                 <View><TouchableOpacity onPress={() => navigation.navigate('Dashboard')}><Image resizeMode="contain" style={styles.icon} source={require('./../assets/tabs/interest-rate.png')}/></TouchableOpacity></View>
                 <View><TouchableOpacity onPress={() => navigation.navigate('Discover')}><Image resizeMode="contain" style={styles.icon} source={ require('./../assets/tabs/discoverIcon.png')}/></TouchableOpacity></View>
                 <View><TouchableOpacity onPress={() => navigation.navigate('Settings')}><Image resizeMode="contain" style={styles.icon} source={ require('./../assets/tabs/settingsIcon.png')}/></TouchableOpacity></View>
 
-            </View> */}
+            </View>
         </View>
     )
 }
@@ -132,8 +166,7 @@ const styles = StyleSheet.create({
     tabs: {
         borderTopLeftRadius:20,
         borderTopRightRadius:20,
-        shadowColor: "#000",
-        shadowColor: "#000",
+        shadowColor: "#FFF",
         shadowOffset: {
           width: 0,
           height: 10,
@@ -149,23 +182,24 @@ const styles = StyleSheet.create({
         padding:15,
         paddingHorizontal:30,
         backgroundColor:'#FFF',
-        shadowColor: '#00A82D',
-        shadowOffset: {
-          width: 0,
-          height: 3
-        },
-        shadowRadius: 5,
-        shadowOpacity: 0.2,
     },
     snapCarouselItem:{
-        height: 100,
-        width: 100,
+        // height: 100,
+        width: width/3,
         flex:1,
       // borderWidth:0.5,
+        marginRight:15,
         backgroundColor: "#FFF",
         padding: 16,
+        shadowColor: "#FFF",
+        shadowOffset: {
+          width: 0,
+          height: 10,
+        },
+        shadowOpacity: 0.51,
+        shadowRadius: 13.16,
+        elevation:20,
       
-      marginTop:15
     },
     snapCarousel: {
         // backgroundColor: "blue",
@@ -177,8 +211,8 @@ const styles = StyleSheet.create({
         height:25,
     },
     imgslider:{
-        width:'100%',
-        height:100,
+        width:60,
+        height:60,
         borderRadius:5,
         
       },
