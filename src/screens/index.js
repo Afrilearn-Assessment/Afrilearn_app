@@ -88,10 +88,10 @@ function Index({navigation}) {
 
                 {/* middle1 */}
                 <View style={{flex:1, marginBottom:40}}>
-                    <TextInput style={{width:"90%",elevation:20,backgroundColor:"#fff", margin:20}} placeholder="search for any course or school"/>
+                    <TextInput style={{width:"90%",elevation:20,backgroundColor:"#fff", margin:20, marginBottom:20}} placeholder=" Search for any course or school"/>
                     
                     <ScrollView>
-                        <View style={{justifyContent:"space-evenly",flexDirection:"row",marginBottom:40}}>
+                        <View style={{justifyContent:"space-evenly",flexDirection:"row",marginBottom:40,marginTop:20}}>
                         <TouchableOpacity > 
                                 <Image source={require("./../assets/images/diagram.png")} style={styles.imgslider}/>
                                 <Text>Category</Text>
@@ -131,6 +131,7 @@ function Index({navigation}) {
                             </View>
                         </Animated.View>
                     </TouchableOpacity>
+                    <TouchableOpacity><Text style={styles.text2}>view all</Text></TouchableOpacity>
                 </View>
 
 
@@ -149,6 +150,7 @@ function Index({navigation}) {
                             </View>
                         </Animated.View>
                     </TouchableOpacity>
+                    <TouchableOpacity><Text style={styles.text2}>view all</Text></TouchableOpacity>
                 </View>
             </ScrollView>
             {/* TAB */}
@@ -216,5 +218,13 @@ const styles = StyleSheet.create({
         borderRadius:5,
         
       },
+      text2:{
+        fontWeight:"bold",
+        fontSize:10,
+        textAlign: "right",
+        paddingTop:20,
+        paddingRight:30,
+        textDecorationLine:"underline"
+      }
 })
 export default Index
