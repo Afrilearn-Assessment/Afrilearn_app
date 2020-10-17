@@ -6,4 +6,4 @@ In the project directory, run as follows:
 ### `npm start` <br/>
 
 OUTPUT:
-![alt text](https://github.com/Afrilearn-Assessment/Afrilearn_app/blob/master/output.png?raw=true)
+![alt text](https://github.com/Afrilearn-Assessment/Afrilearn_app/blob/main/output.png?raw=true)
