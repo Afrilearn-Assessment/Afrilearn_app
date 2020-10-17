@@ -5,5 +5,5 @@ In the project directory, run as follows:
 
 ### `npm start` <br/>
 
-OUTPUT:
+OUTPUT: <br/>
 ![alt text](https://github.com/Afrilearn-Assessment/Afrilearn_app/blob/main/output.png?raw=true)
